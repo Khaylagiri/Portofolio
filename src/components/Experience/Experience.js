@@ -52,7 +52,7 @@ function Experience() {
               <img 
                 src={exp.icon} 
                 alt={`${exp.company} logo`} 
-                style={{ width: "28px", height: "28px", objectFit: "contain" }}
+                className="timeline-logo"
               />
             </div>
             <div className="timeline-content">

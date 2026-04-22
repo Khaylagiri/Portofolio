@@ -759,7 +759,6 @@ button:focus {
 
 .experience-title {
   text-align: center;
-  margin-left: 100px;
   font-weight: 700;
   font-size: 2.3rem;
   color: #004aad;
@@ -800,6 +799,12 @@ button:focus {
   transition: background-color 0.3s;
 }
 
+.timeline-logo {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
 .timeline-icon:hover {
   background-color: #6f42c1;
   color: white;
@@ -812,8 +817,7 @@ button:focus {
   padding: 22px 28px;
   box-shadow: 0 6px 15px rgba(111, 66, 193, 0.1);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  /* Text center for role and description */
-  text-align: center;
+  text-align: left;
 }
 
 .timeline-content:hover {
@@ -823,21 +827,19 @@ button:focus {
 
 .timeline-header-clean {
   display: flex;
-  justify-content: space-between; /* company kiri, period kanan */
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
   gap: 12px;
 }
 
-/* Company di kiri tapi teks center di dalam box (flex:1), jadi dia tidak nempel kiri */
 .company {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 700;
   color: #004aad;
   flex: 1;
-  text-align: center;  
-  margin-left: 200px;
+  text-align: left;
   word-break: break-word;
   transition: color 0.3s ease;
 }
@@ -847,24 +849,22 @@ button:focus {
   cursor: pointer;
 }
 
-/* Period tetap di kanan */
 .period {
   font-size: 1rem;
   color: #888;
   white-space: nowrap;
   font-weight: 500;
-  text-align: right; /* pastikan di kanan */
+  text-align: right;
   flex-shrink: 0;
 }
 
-/* Role & Description tetap center */
 .role {
   color: #333;
   font-weight: 600;
   font-size: 1.1rem;
   margin-bottom: 6px;
   display: block;
-  text-align: center;
+  text-align: left;
 }
 
 .description {
@@ -872,34 +872,52 @@ button:focus {
   font-size: 1rem;
   line-height: 1.5;
   margin-top: 0;
-  text-align: center;
+  text-align: left;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .experience-timeline-container {
-    padding: 20px 16px;
+    margin: 88px auto 50px auto;
+    padding: 18px 14px;
     max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .experience-title {
+    margin-bottom: 28px;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
   }
 
   .timeline {
-    padding-left: 25px;
+    padding-left: 20px;
     border-left: 2px solid #6f42c1;
   }
 
   .timeline-icon {
-    left: -28px;
-    width: 36px;
-    height: 36px;
-    font-size: 1.3rem;
+    left: -24px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .timeline-logo {
+    width: 76%;
+    height: 76%;
   }
 
   .timeline-content {
-    padding: 18px 20px;
+    padding: 16px 14px;
+  }
+
+  .timeline-header-clean {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 
   .company {
     font-size: 1.1rem;
+    text-align: left;
   }
 
   .role {
@@ -908,5 +926,7 @@ button:focus {
 
   .period {
     font-size: 0.9rem;
+    white-space: normal;
+    text-align: left;
   }
 }
